@@ -16,7 +16,7 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        // <LogoCarousel />
+        {/* // <LogoCarousel /> */}
         <Feature1Stats />
         <Feature2Resource />
         <Feature3Grid />
