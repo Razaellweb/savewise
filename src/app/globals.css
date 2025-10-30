@@ -1,0 +1,260 @@
+/* Updated: 2025-10-30T12:03:35.858Z */
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500&family=Inter:wght@400;500;600&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  /* Shadcn/UI colors - Teal Theme */
+  --color-background: #F0FDFA;
+  --color-foreground: #134E4A;
+
+  --color-card: #ffffff;
+  --color-card-foreground: #134E4A;
+
+  --color-popover: #ffffff;
+  --color-popover-foreground: #134E4A;
+
+  --color-primary: #0F766E;
+  --color-primary-foreground: #ffffff;
+
+  --color-secondary: #CCFBF1;
+  --color-secondary-foreground: #134E4A;
+
+  --color-muted: #F5F5F4;
+  --color-muted-foreground: #14B8A6;
+
+  --color-accent: #CCFBF1;
+  --color-accent-foreground: #134E4A;
+
+  --color-destructive: #ef4444;
+  --color-destructive-foreground: #fafafa;
+
+  --color-border: #99F6E4;
+  --color-input: #99F6E4;
+  --color-ring: #0F766E;
+
+  --color-chart-1: #14B8A6;
+  --color-chart-2: #0F766E;
+  --color-chart-3: #134E4A;
+  --color-chart-4: #5EEAD4;
+  --color-chart-5: #2DD4BF;
+
+  --color-sidebar: #f7f7f7;
+  --color-sidebar-foreground: #404040;
+  --color-sidebar-primary: #0F766E;
+  --color-sidebar-primary-foreground: #fafafa;
+  --color-sidebar-accent: #CCFBF1;
+  --color-sidebar-accent-foreground: #134E4A;
+  --color-sidebar-border: #99F6E4;
+  --color-sidebar-ring: #14B8A6;
+
+  --radius-lg: 0.5rem;
+  --radius-md: calc(0.5rem - 2px);
+  --radius-sm: calc(0.5rem - 4px);
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+
+  /* Teal design system colors */
+  --color-teal-50: #F0FDFA;
+  --color-teal-100: #CCFBF1;
+  --color-teal-200: #99F6E4;
+  --color-teal-300: #5EEAD4;
+  --color-teal-400: #2DD4BF;
+  --color-teal-500: #14B8A6;
+  --color-teal-600: #0D9488;
+  --color-teal-700: #0F766E;
+  --color-teal-800: #115E59;
+  --color-teal-900: #134E4A;
+  --color-primary-hover: rgba(15, 118, 110, 0.9);
+  --color-shadow: rgba(0, 0, 0, 0.1);
+  --color-shadow-lg: rgba(0, 0, 0, 0.15);
+  --color-divider-gradient: rgba(15, 118, 110, 0.27);
+
+  /* Font families */
+  --font-inter: "Inter", sans-serif;
+  --font-inter-tight: "Inter Tight", sans-serif;
+}
+
+/*
+  The default border color has changed to currentColor in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-border);
+  }
+}
+
+@layer utilities {
+  body {
+    font-family: var(--font-inter);
+  }
+}
+
+@layer base {
+  :root {
+    /* Shadcn/UI variables - DO NOT REMOVE OR RENAME */
+    --background: var(--color-background);
+    --foreground: var(--color-foreground);
+    --card: var(--color-card);
+    --card-foreground: var(--color-card-foreground);
+    --popover: var(--color-popover);
+    --popover-foreground: var(--color-popover-foreground);
+    --primary: var(--color-primary);
+    --primary-foreground: var(--color-primary-foreground);
+    --secondary: var(--color-secondary);
+    --secondary-foreground: var(--color-secondary-foreground);
+    --muted: var(--color-muted);
+    --muted-foreground: var(--color-muted-foreground);
+    --accent: var(--color-accent);
+    --accent-foreground: var(--color-accent-foreground);
+    --destructive: var(--color-destructive);
+    --destructive-foreground: var(--color-destructive-foreground);
+    --border: var(--color-border);
+    --input: var(--color-input);
+    --ring: var(--color-ring);
+    --chart-1: var(--color-chart-1);
+    --chart-2: var(--color-chart-2);
+    --chart-3: var(--color-chart-3);
+    --chart-4: var(--color-chart-4);
+    --chart-5: var(--color-chart-5);
+    --radius: var(--radius-lg);
+    --sidebar-background: var(--color-sidebar);
+    --sidebar-foreground: var(--color-sidebar-foreground);
+    --sidebar-primary: var(--color-sidebar-primary);
+    --sidebar-primary-foreground: var(--color-sidebar-primary-foreground);
+    --sidebar-accent: var(--color-sidebar-accent);
+    --sidebar-accent-foreground: var(--color-sidebar-accent-foreground);
+    --sidebar-border: var(--color-sidebar-border);
+    --sidebar-ring: var(--color-sidebar-ring);
+  }
+
+  /* Typography */
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    font-family: var(--font-inter);
+    font-size: 1rem; /* Body */
+    line-height: 1.6;
+    font-weight: 400;
+    color: var(--foreground);
+  }
+
+  h1 {
+    font-family: var(--font-inter);
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  h2 {
+    font-family: var(--font-inter);
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  h3 {
+    font-family: var(--font-inter);
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  .font-inter-tight {
+    font-family: var(--font-inter-tight);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px; /* Mobile */
+    padding-right: 20px; /* Mobile */
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 32px; /* Tablet */
+      padding-right: 32px; /* Tablet */
+    }
+    h1 {
+      font-size: 3rem; /* H1 Tablet */
+    }
+    h2 {
+      font-size: 2.25rem; /* H2 Tablet */
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      max-width: 1280px;
+      padding-left: 40px; /* Desktop */
+      padding-right: 40px; /* Desktop */
+    }
+    h1 {
+      font-size: 3.75rem; /* H1 Desktop */
+    }
+    h2 {
+      font-size: 3rem; /* H2 Desktop */
+    }
+  }
+
+  @media (max-width: 639px) {
+    h1 {
+      font-size: 1.875rem; /* H1 Mobile */
+      line-height: 1.2;
+    }
+    h2 {
+      font-size: 1.5rem; /* H2 Mobile */
+    }
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Hide Next.js error overlay portal */
+nextjs-portal {
+  display: none !important;
+}
