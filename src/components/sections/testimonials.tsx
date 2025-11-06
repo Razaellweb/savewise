@@ -2,39 +2,44 @@ import Image from "next/image";
 
 const testimonials = [
   {
-    quote: "YouFi made it incredibly easy to get a loan secured by my crypto holdings. The process was smooth and funds arrived in my Nigerian account within hours.",
+    quote:
+      "SaveWise made it easy to stick to my Target Savings for school fees. Seeing progress in real time keeps me motivated.",
     name: "Adebayo Okonkwo",
-    role: "Borrower",
+    role: "Parent",
     company: "Lagos, Nigeria",
-    image: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/9966263c-e42d-49b3-a09d-5067be7c7e76-streamline-nextjs-template-vercel-app/assets/images/1-9.webp",
+    image: "https://randomuser.me/api/portraits/men/32.jpg",
   },
   {
-    quote: "As a lender, I appreciate the transparency and security. The 135% LTV gives me confidence, and the returns are excellent compared to traditional options.",
-    name: "Sarah Chen",
-    role: "Lender",
-    company: "Singapore",
-    image: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/9966263c-e42d-49b3-a09d-5067be7c7e76-streamline-nextjs-template-vercel-app/assets/images/amy-chase-10.webp",
+    quote:
+      "AutoSave takes the stress out of saving. I set it once and now I earn interest every month without thinking about it.",
+    name: "Sarah Johnson",
+    role: "Entrepreneur",
+    company: "Accra, Ghana",
+    image: "https://randomuser.me/api/portraits/women/44.jpg",
   },
   {
-    quote: "The real-time collateral monitoring gives me peace of mind. I always know exactly where my loan stands and when payments are due.",
+    quote:
+      "SafeLock helped me keep my emergency fund untouched. Withdrawals are smooth through Paystack when I need them.",
     name: "Chioma Nwosu",
-    role: "Borrower",
+    role: "Designer",
     company: "Abuja, Nigeria",
-    image: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/9966263c-e42d-49b3-a09d-5067be7c7e76-streamline-nextjs-template-vercel-app/assets/images/victoria-smith-11.webp",
+    image: "https://randomuser.me/api/portraits/women/12.jpg",
   },
   {
-    quote: "The platform's mobile-first approach is perfect for our market. Everything works seamlessly on my phone, from KYC to loan management.",
+    quote:
+      "The dashboard shows total savings and interest at a glance. It's simple and trustworthy.",
     name: "Ibrahim Mohammed",
-    role: "Borrower",
+    role: "Engineer",
     company: "Kano, Nigeria",
-    image: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/9966263c-e42d-49b3-a09d-5067be7c7e76-streamline-nextjs-template-vercel-app/assets/images/kevin-yam-12.webp",
+    image: "https://randomuser.me/api/portraits/men/18.jpg",
   },
   {
-    quote: "I've funded multiple loans through YouFi and the returns have been consistent. The risk management tools are sophisticated yet easy to use.",
-    name: "Marcus Liu",
-    role: "Lender",
-    company: "Hong Kong",
-    image: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/9966263c-e42d-49b3-a09d-5067be7c7e76-streamline-nextjs-template-vercel-app/assets/images/kundo-marta-13.webp",
+    quote:
+      "I reached my travel goal faster with Target Savings and reminders. Highly recommend SaveWise.",
+    name: "Ama K.",
+    role: "Student",
+    company: "Kumasi, Ghana",
+    image: "https://randomuser.me/api/portraits/women/67.jpg",
   },
 ];
 
@@ -44,10 +49,10 @@ export default function Testimonials() {
       <div className="container mx-auto">
         <div className="mb-12 text-center md:mb-16">
           <h2 className="mb-4 text-3xl font-semibold md:text-4xl">
-            Trusted by borrowers and lenders
+            Loved by savers across West Africa
           </h2>
           <p className="mx-auto max-w-3xl text-muted-foreground">
-            YouFi is building bridges between crypto holders and emerging markets, creating opportunities for financial inclusion and growth.
+            Thousands trust SaveWise to automate their savings, earn interest, and stay on track toward their goals.
           </p>
         </div>
 
@@ -57,9 +62,7 @@ export default function Testimonials() {
               key={index}
               className="flex flex-col gap-4 rounded-xl border bg-background p-6 transition-shadow hover:shadow-lg"
             >
-              <p className="flex-grow text-base leading-relaxed">
-                "{testimonial.quote}"
-              </p>
+              <p className="flex-grow text-base leading-relaxed">“{testimonial.quote}”</p>
               <div className="flex items-center gap-3">
                 <Image
                   src={testimonial.image}

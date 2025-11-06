@@ -7,36 +7,36 @@ import AnalyticsWidget from "@/components/dashboard/analytics-widget";
 const features = [
   {
     icon: BookOpen,
-    title: "Loan Order Book",
+    title: "Goal Planner",
     component: OrderBookWidget,
   },
   {
     icon: Shield,
-    title: "Collateral Escrow",
+    title: "SafeLock",
     component: CollateralWidget,
   },
   {
     icon: MessageSquare,
-    title: "Transaction History",
+    title: "Transactions",
     component: TransactionWidget,
   },
   {
     icon: TrendingUp,
-    title: "Analytics Dashboard",
+    title: "Insights",
     component: AnalyticsWidget,
   },
 ];
 
 export default function Feature3Grid() {
   return (
-    <section className="bg-background py-16 md:py-20 lg:py-32">
+    <section className="bg-background py-16 md:py-20 lg:py-32" id="dashboard">
       <div className="container mx-auto">
         <div className="mb-12 text-center">
           <h2 className="mb-4 text-3xl font-semibold md:text-4xl lg:text-5xl">
-            Complete lending infrastructure
+            Dashboard preview & security
           </h2>
           <p className="mx-auto max-w-2xl text-muted-foreground">
-            From loan origination to repayment tracking, YouFi provides all the tools for successful P2P lending
+            Visualize your savings goals, monitor SafeLock balances, and review transactions — all secured with bank-grade protections.
           </p>
         </div>
 
@@ -52,8 +52,8 @@ export default function Feature3Grid() {
           })}
         </div>
 
-        <p className="text-center text-lg text-muted-foreground">
-          Mobile-first design optimized for emerging markets
+        <p className="text-center text-lg text-muted-foreground" id="security">
+          Secure transactions powered by Paystack and Flutterwave
         </p>
       </div>
     </section>

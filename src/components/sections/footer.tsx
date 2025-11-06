@@ -1,14 +1,13 @@
 import Link from "next/link";
-import { Twitter, Linkedin, Github } from "lucide-react";
-import YouFiLogo from "@/components/ui/youfi-logo";
+import { Twitter, Linkedin, Github, Lock } from "lucide-react";
 
 export default function Footer() {
   const footerLinks = {
     product: [
-      { name: "How It Works", href: "#" },
-      { name: "For Borrowers", href: "#" },
-      { name: "For Lenders", href: "#" },
-      { name: "Tiers", href: "#" },
+      { name: "How It Works", href: "#how-it-works" },
+      { name: "Savings Plans", href: "#features" },
+      { name: "Dashboard", href: "#dashboard" },
+      { name: "Security", href: "#security" },
     ],
     company: [
       { name: "About Us", href: "#" },
@@ -19,14 +18,14 @@ export default function Footer() {
     resources: [
       { name: "Documentation", href: "#" },
       { name: "API Reference", href: "#" },
-      { name: "Security", href: "#" },
+      { name: "Security", href: "#security" },
       { name: "Support", href: "#" },
     ],
     legal: [
       { name: "Terms of Service", href: "#" },
       { name: "Privacy Policy", href: "#" },
-      { name: "Risk Disclosure", href: "#" },
-      { name: "KYC Policy", href: "#" },
+      { name: "Cookies", href: "#" },
+      { name: "Compliance", href: "#" },
     ],
   };
 
@@ -36,9 +35,12 @@ export default function Footer() {
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-5">
           {/* Company Info */}
           <div>
-            <YouFiLogo className="mb-4 h-8 w-auto" />
+            <div className="mb-4 inline-flex items-center gap-2">
+              <Lock className="size-5 text-primary" aria-hidden="true" />
+              <span className="text-base font-semibold tracking-tight">SaveWise</span>
+            </div>
             <p className="text-sm text-muted-foreground">
-              P2P lending marketplace connecting crypto and fiat lenders with borrowers in emerging markets.
+              Smart, secure goal-based savings for individuals and families across Nigeria and West Africa.
             </p>
             <div className="mt-6 flex gap-4">
               <Link href="#" className="text-muted-foreground transition-colors hover:text-primary">
@@ -133,7 +135,7 @@ export default function Footer() {
         <div className="mt-12 border-t pt-8">
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
             <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} YouFi. All rights reserved. V1 Closed Beta.
+              © {new Date().getFullYear()} SaveWise. All rights reserved.
             </p>
             <div className="flex gap-6">
               <Link href="#" className="text-sm text-muted-foreground transition-colors hover:text-primary">

@@ -1,4 +1,4 @@
-/* Updated: 2025-10-30T12:03:35.858Z */
+/* Updated: 2025-11-06T00:00:00.000Z */
 @import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500&family=Inter:wght@400;500;600&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
@@ -6,50 +6,56 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  /* Shadcn/UI colors - Teal Theme */
-  --color-background: #F0FDFA;
-  --color-foreground: #134E4A;
+  /* Shadcn/UI colors - SaveWise Blue/Green Theme */
+  --color-background: #F7FAFF;
+  --color-foreground: #0F172A;
 
   --color-card: #ffffff;
-  --color-card-foreground: #134E4A;
+  --color-card-foreground: #0F172A;
 
   --color-popover: #ffffff;
-  --color-popover-foreground: #134E4A;
+  --color-popover-foreground: #0F172A;
 
-  --color-primary: #0F766E;
+  /* Primary brand blue */
+  --color-primary: #2C6DF3;
   --color-primary-foreground: #ffffff;
 
-  --color-secondary: #CCFBF1;
-  --color-secondary-foreground: #134E4A;
+  /* Subtle secondary surface (pale blue) */
+  --color-secondary: #EAF2FF;
+  --color-secondary-foreground: #0F172A;
 
-  --color-muted: #F5F5F4;
-  --color-muted-foreground: #14B8A6;
+  --color-muted: #F3F6FB;
+  --color-muted-foreground: #4B5563;
 
-  --color-accent: #CCFBF1;
-  --color-accent-foreground: #134E4A;
+  /* Accent uses brand green for success and highlights */
+  --color-accent: #DAF7EF;
+  --color-accent-foreground: #065F46;
 
   --color-destructive: #ef4444;
   --color-destructive-foreground: #fafafa;
 
-  --color-border: #99F6E4;
-  --color-input: #99F6E4;
-  --color-ring: #0F766E;
+  --color-border: #D8E3FF;
+  --color-input: #D8E3FF;
+  --color-ring: #2C6DF3;
 
-  --color-chart-1: #14B8A6;
-  --color-chart-2: #0F766E;
-  --color-chart-3: #134E4A;
-  --color-chart-4: #5EEAD4;
-  --color-chart-5: #2DD4BF;
+  /* Charts: blue + green ramps */
+  --color-chart-1: #2C6DF3; /* blue */
+  --color-chart-2: #00C389; /* green */
+  --color-chart-3: #1846A1; /* deep blue */
+  --color-chart-4: #5FD8B1; /* mint */
+  --color-chart-5: #6AA4FF; /* sky blue */
 
-  --color-sidebar: #f7f7f7;
+  /* Sidebar (unchanged semantics) */
+  --color-sidebar: #F7FAFF;
   --color-sidebar-foreground: #404040;
-  --color-sidebar-primary: #0F766E;
-  --color-sidebar-primary-foreground: #fafafa;
-  --color-sidebar-accent: #CCFBF1;
-  --color-sidebar-accent-foreground: #134E4A;
-  --color-sidebar-border: #99F6E4;
-  --color-sidebar-ring: #14B8A6;
+  --color-sidebar-primary: #2C6DF3;
+  --color-sidebar-primary-foreground: #FFFFFF;
+  --color-sidebar-accent: #EAF2FF;
+  --color-sidebar-accent-foreground: #0F172A;
+  --color-sidebar-border: #D8E3FF;
+  --color-sidebar-ring: #2C6DF3;
 
+  /* Radii */
   --radius-lg: 0.5rem;
   --radius-md: calc(0.5rem - 2px);
   --radius-sm: calc(0.5rem - 4px);
@@ -74,7 +80,7 @@
     }
   }
 
-  /* Teal design system colors */
+  /* Legacy teal system kept for compatibility (not primary) */
   --color-teal-50: #F0FDFA;
   --color-teal-100: #CCFBF1;
   --color-teal-200: #99F6E4;
@@ -85,10 +91,11 @@
   --color-teal-700: #0F766E;
   --color-teal-800: #115E59;
   --color-teal-900: #134E4A;
-  --color-primary-hover: rgba(15, 118, 110, 0.9);
-  --color-shadow: rgba(0, 0, 0, 0.1);
-  --color-shadow-lg: rgba(0, 0, 0, 0.15);
-  --color-divider-gradient: rgba(15, 118, 110, 0.27);
+  --color-primary-hover: rgba(44, 109, 243, 0.9);
+  --color-shadow: rgba(0, 0, 0, 0.08);
+  --color-shadow-lg: rgba(0, 0, 0, 0.12);
+  --color-divider-gradient: rgba(44, 109, 243, 0.25);
+  --color-mint-gradient-end: #EEF8FF; /* used by feature cards */
 
   /* Font families */
   --font-inter: "Inter", sans-serif;

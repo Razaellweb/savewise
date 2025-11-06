@@ -1,16 +1,17 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { CircleDot, Shield, Zap, TrendingUp, ArrowRight } from "lucide-react";
+import { Shield, Target, Wallet, LineChart, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import LoanDashboard from "@/components/ui/loan-dashboard";
 import OrderBook from "@/components/ui/order-book";
-import WalletManagement from "@/components/ui/wallet-management";
+import WalletOverview from "@/components/dashboard/wallet-overview";
+import Link from "next/link";
 
 const carouselComponents = [
-  { component: LoanDashboard, label: "Loan Dashboard" },
-  { component: OrderBook, label: "Order Book" },
-  { component: WalletManagement, label: "Wallet Management" },
+  { component: LoanDashboard, label: "Dashboard Overview" },
+  { component: OrderBook, label: "Goal Planner" },
+  { component: WalletOverview, label: "Wallets & Funding" },
 ];
 
 export default function Hero() {
@@ -25,38 +26,38 @@ export default function Hero() {
 
   const features = [
     {
-      icon: CircleDot,
-      title: "Instant Matching",
-      description: "Smart order book matches borrowers with lenders in real-time",
+      icon: Target,
+      title: "Goal-based plans",
+      description: "AutoSave, Target Savings, and SafeLock tailored to you",
     },
     {
       icon: Shield,
-      title: "Secure Collateral",
-      description: "135% LTV with USDC/USDT custodial escrow protection",
+      title: "Secure & trusted",
+      description: "Deposits and withdrawals via Paystack or Flutterwave",
     },
     {
-      icon: Zap,
-      title: "Quick Disbursement",
-      description: "Get funds in NGN or USDC within minutes of approval",
+      icon: LineChart,
+      title: "Earn competitive interest",
+      description: "Rates optimized by plan type to grow your savings",
     },
     {
-      icon: TrendingUp,
-      title: "Competitive Rates",
-      description: "Up to 12.5% monthly for borrowers, attractive returns for lenders",
+      icon: Wallet,
+      title: "Track progress in real time",
+      description: "Clean dashboard with totals, interest, and goal status",
     },
   ];
 
   return (
-    <section className="relative overflow-hidden border-b bg-background">
+    <section className="relative overflow-hidden border-b bg-background" id="hero">
       <div className="container mx-auto pb-16 pt-16 md:pb-20 md:pt-24 lg:pb-32 lg:pt-32">
         <div className="grid gap-12 lg:grid-cols-[1fr,0.68fr] lg:gap-16">
           {/* Left Column */}
           <div className="flex flex-col justify-center">
             <h1 className="mb-6 text-balance text-4xl font-semibold leading-tight tracking-tight md:text-5xl lg:text-6xl">
-              Crypto-backed loans for emerging markets
+              Achieve your financial goals with smart, secure savings
             </h1>
             <p className="mb-8 text-balance font-inter-tight text-2xl font-medium leading-relaxed text-muted-foreground md:text-3xl lg:text-4xl">
-              YouFi connects fiat and crypto lenders with borrowers. Secure, fast, and mobile-first P2P lending.
+              SaveWise helps individuals and families in Nigeria and West Africa build wealth effortlessly with automated, goal-based plans.
             </p>
 
             {/* Feature Grid */}
@@ -79,12 +80,16 @@ export default function Hero() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col gap-4 sm:flex-row">
-              <Button size="lg" className="gap-2">
-                Get Started
-                <ArrowRight className="size-4" />
+              <Button size="lg" className="gap-2" asChild>
+                <Link href="/signup" data-event-name="cta_signup_hero">
+                  get started today
+                  <ArrowRight className="size-4" />
+                </Link>
               </Button>
-              <Button size="lg" variant="outline" className="gap-2">
-                Request Early Access →
+              <Button size="lg" variant="outline" className="gap-2" asChild>
+                <Link href="#how-it-works" data-event-name="cta_learn_how">
+                  Learn how it works →
+                </Link>
               </Button>
             </div>
 
@@ -102,6 +107,7 @@ export default function Hero() {
                       index === currentSlide ? "bg-primary" : "bg-primary/20"
                     }`}
                     aria-label={`Go to slide ${index + 1}`}
+                    data-event-name={`carousel_jump_${index + 1}`}
                   />
                 ))}
               </div>

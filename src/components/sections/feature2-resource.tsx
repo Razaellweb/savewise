@@ -1,40 +1,45 @@
-import { Wallet, Lock, Zap, MessageSquare, TrendingUp } from "lucide-react";
+import { Wallet, Lock, Zap, CreditCard, TrendingUp, ShieldCheck, Target } from "lucide-react";
 import WalletOverview from "@/components/dashboard/wallet-overview";
 
 export default function Feature2Resource() {
   const features = [
     {
-      icon: Wallet,
-      title: "Multi-currency wallets",
-      description: "NGN virtual accounts (Providus Bank) and USDC/USDT wallets on Polygon, BNB, and Tron networks",
+      icon: Target,
+      title: "Personalized plans",
+      description: "Automate savings with AutoSave, set milestones with Target Savings, or lock funds with SafeLock",
     },
     {
-      icon: Lock,
-      title: "Tiered KYC verification",
-      description: "Tier 1 for borrowers (up to ₦1M/$500), Tier 2 for lenders and higher limits (up to ₦5M/$2,500)",
-    },
-    {
-      icon: Zap,
-      title: "Instant loan matching",
-      description: "Smart order book automatically matches loan requests with available lender capital",
-    },
-    {
-      icon: MessageSquare,
-      title: "Real-time notifications",
-      description: "Push, email, and SMS alerts for loan milestones, liquidation warnings, and due dates",
+      icon: CreditCard,
+      title: "Trusted payments",
+      description: "Secure deposits and withdrawals via Paystack or Flutterwave",
     },
     {
       icon: TrendingUp,
-      title: "Live collateral monitoring",
-      description: "Automated price feeds track LTV health 24/7 with liquidation at 115% threshold",
+      title: "Tailored interest",
+      description: "Competitive earnings based on plan type to match your goals",
+    },
+    {
+      icon: Zap,
+      title: "Automated scheduling",
+      description: "Set recurring contributions weekly or monthly with reminders",
+    },
+    {
+      icon: ShieldCheck,
+      title: "Bank-grade security",
+      description: "Encryption, device checks, and fraud monitoring on every transaction",
+    },
+    {
+      icon: Wallet,
+      title: "Unified dashboard",
+      description: "View total savings, interest earned, and goal progress at a glance",
     },
   ];
 
   return (
-    <section className="bg-card py-16 md:py-20 lg:py-32">
+    <section className="bg-card py-16 md:py-20 lg:py-32" id="features">
       <div className="container mx-auto">
         <h2 className="mb-12 text-center text-3xl font-semibold md:text-4xl lg:text-5xl">
-          Everything you need to lend and borrow
+          Everything you need to save with confidence
         </h2>
 
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
